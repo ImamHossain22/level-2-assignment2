@@ -3,8 +3,8 @@ import { BicycleStoreServices } from "./bicycleStore.service";
 
 const createBicycleData = async (req: Request, res: Response) => {
     try {
-        const bicycleData = req.body.cycle;
 
+        const{cycle: bicycleData} = req.body;
         const result = await BicycleStoreServices.createBicycleDataIntoDB(bicycleData);
         res.status(200).json({
             sucess: true,
@@ -19,7 +19,42 @@ const createBicycleData = async (req: Request, res: Response) => {
     
 };
 
+const getAllCycles = async (req: Request, res: Response) => {
+    try {
+        const result = await BicycleStoreServices.getAllCycleDataFromDB();
+        res.status(200).json({
+            success: true,
+            message: "Bicycle store data retrive successfully",
+            data: result,
+            getDataAt: new Date()
+        });
+    }
+    catch (error) {
+        console.log(error);
+    }
+};
+const getSingleCycleData = async (req: Request, res: Response) => {
+    try {
+        const idOfData = req.params.productID;
+
+        const result = await BicycleStoreServices.getSingleCycleDataFromDB(idOfData);
+        res.status(200).json({
+            success: true,
+            message: "A bicycle data retrive successfully",
+            data: result,
+            getDataAt: new Date()
+        });
+    }
+    catch (error) {
+        console.log(error);
+    }
+};
+
+
+
 export const BicycleStoreControllers = {
-    createBicycleData
+    createBicycleData,
+    getAllCycles,
+    getSingleCycleData
 };
 
