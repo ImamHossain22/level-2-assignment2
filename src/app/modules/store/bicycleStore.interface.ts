@@ -10,5 +10,6 @@ export type Bicycles = {
     type:  ["Mountain"| "Road"| "Hybrid"| "BMX"| "Electric"],
     description: string,
     quantity:string,
-    inStock: boolean
+    inStock: boolean,
+    
 }

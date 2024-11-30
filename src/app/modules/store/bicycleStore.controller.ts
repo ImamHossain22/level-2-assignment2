@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { BicycleStoreServices } from "./bicycleStore.service";
-import { timeStamp } from "console";
+
 
 const createBicycleData = async (req: Request, res: Response) => {
     try {
@@ -11,7 +11,7 @@ const createBicycleData = async (req: Request, res: Response) => {
             sucess: true,
             message: "Bicycle Data create sucessfully",
             data: result,
-           createdAt: new Date()
+           
         });
     }
     catch (err) {
@@ -27,7 +27,7 @@ const getAllCycles = async (req: Request, res: Response) => {
             success: true,
             message: "Bicycle store data retrive successfully",
             data: result,
-            getDataAt: new Date()
+           
         });
     }
     catch (error) {
@@ -36,7 +36,7 @@ const getAllCycles = async (req: Request, res: Response) => {
 };
 const getSingleCycleData = async (req: Request, res: Response) => {
     try {
-        const idOfData = req.params.productID;
+        const idOfData = req.params._id;
 
         const result = await BicycleStoreServices.getSingleCycleDataFromDB(idOfData);
         res.status(200).json({
@@ -62,7 +62,23 @@ const updateCycleData = async (req: Request, res: Response) => {
             success: true,
             message: " Bicycle Data Update Successfully",
             data: result,
-            updatedAt: new Date()
+           
+        });
+    }catch (error) {
+        console.log(error)
+    }
+};
+const deleteCycleData = async (req: Request, res: Response) => {
+    try {
+        
+        const deleteId = req.params._id;
+        
+       await BicycleStoreServices.deleteADataFromDB(deleteId);
+        res.status(200).json({
+            success: true,
+            message: " Bicycle Data delete Successfully",
+            data: {}
+            
         });
     }catch (error) {
         console.log(error)
@@ -74,6 +90,7 @@ export const BicycleStoreControllers = {
     createBicycleData,
     getAllCycles,
     getSingleCycleData,
-    updateCycleData
+    updateCycleData,
+    deleteCycleData
 };
 

@@ -12,8 +12,9 @@ const bicycleShema = new Schema<Bicycles>({
     
     quantity: { type: String },
     
-    inStock: { type: Boolean },
-    
-});
+    inStock: { type: Boolean }, 
+},
+{ timestamps: true }
+);
 
 export const BicycleModel = model<Bicycles>("Bicycle", bicycleShema)
