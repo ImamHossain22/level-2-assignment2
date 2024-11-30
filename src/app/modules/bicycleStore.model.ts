@@ -13,6 +13,7 @@ const bicycleShema = new Schema<Bicycles>({
     quantity: { type: String },
     
     inStock: { type: Boolean },
+    
 });
 
 export const BicycleModel = model<Bicycles>("Bicycle", bicycleShema)

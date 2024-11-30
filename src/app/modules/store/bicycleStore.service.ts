@@ -1,4 +1,5 @@
 
+import { Request, Response } from "express";
 import {  BicycleModel } from "../bicycleStore.model";
 import { Bicycles } from "./bicycleStore.interface";
 
@@ -18,9 +19,16 @@ const getSingleCycleDataFromDB = async (productID: string) => {
     return result;
 }
 
+const updateADataFromDB = async (_id: string, data: Bicycles) => {
+    
+    const result = await BicycleModel.findByIdAndUpdate(_id, data)
+    return result;
+}
+
 
 export const BicycleStoreServices = {
     createBicycleDataIntoDB,
     getAllCycleDataFromDB,
-    getSingleCycleDataFromDB
+    getSingleCycleDataFromDB,
+    updateADataFromDB
 }

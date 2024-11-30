@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { BicycleStoreServices } from "./bicycleStore.service";
+import { timeStamp } from "console";
 
 const createBicycleData = async (req: Request, res: Response) => {
     try {
@@ -42,7 +43,7 @@ const getSingleCycleData = async (req: Request, res: Response) => {
             success: true,
             message: "A bicycle data retrive successfully",
             data: result,
-            getDataAt: new Date()
+            
         });
     }
     catch (error) {
@@ -51,10 +52,28 @@ const getSingleCycleData = async (req: Request, res: Response) => {
 };
 
 
+const updateCycleData = async (req: Request, res: Response) => {
+    try {
+        
+        const updateId = req.params._id;
+        const updatedetails = req.body;
+        const result = await BicycleStoreServices.updateADataFromDB(updateId, updatedetails);
+        res.status(200).json({
+            success: true,
+            message: " Bicycle Data Update Successfully",
+            data: result,
+            updatedAt: new Date()
+        });
+    }catch (error) {
+        console.log(error)
+    }
+};
+
 
 export const BicycleStoreControllers = {
     createBicycleData,
     getAllCycles,
-    getSingleCycleData
+    getSingleCycleData,
+    updateCycleData
 };
 

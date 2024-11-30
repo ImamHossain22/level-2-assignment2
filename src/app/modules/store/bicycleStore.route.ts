@@ -9,4 +9,6 @@ router.get('/', BicycleStoreControllers.getAllCycles);
 
 router.get('/:productID', BicycleStoreControllers.getSingleCycleData);
 
+router.put('/:_id', BicycleStoreControllers.updateCycleData);
+
 export const BicycleRoutes = router;
