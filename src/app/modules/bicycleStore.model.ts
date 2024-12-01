@@ -1,10 +1,10 @@
 import { Schema, model } from 'mongoose';
 import { Bicycles } from './store/bicycleStore.interface';
 
-const bicycleShema = new Schema<Bicycles>({
-    productID: { type: String, },
+const bicycleSchema = new Schema<Bicycles>({
+    productID: { type: String },
     profileImg: { type: String, },
-    name: { type: String, },
+    name: { type: String },
     brand: { type: String, },
     price: { type: String, },
     type: ["Mountain", "Road", "Hybrid", "BMX", "Electric"],
@@ -17,4 +17,4 @@ const bicycleShema = new Schema<Bicycles>({
 { timestamps: true }
 );
 
-export const BicycleModel = model<Bicycles>("Bicycle", bicycleShema)
+export const BicycleModel = model<Bicycles>("Bicycle", bicycleSchema);

@@ -1,5 +1,5 @@
 
-import { Request, Response } from "express";
+
 import {  BicycleModel } from "../bicycleStore.model";
 import { Bicycles } from "./bicycleStore.interface";
 

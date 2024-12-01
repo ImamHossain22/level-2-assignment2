@@ -5,7 +5,8 @@ import { BicycleStoreServices } from "./bicycleStore.service";
 const createBicycleData = async (req: Request, res: Response) => {
     try {
 
-        const{cycle: bicycleData} = req.body;
+        const { cycle: bicycleData } = req.body;
+        
         const result = await BicycleStoreServices.createBicycleDataIntoDB(bicycleData);
         res.status(200).json({
             sucess: true,
