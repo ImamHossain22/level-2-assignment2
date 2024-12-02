@@ -8,8 +8,8 @@ const app: Application = express()
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/v1/bicycles", BicycleRoutes);
-app.use("/api/v1/orders", OrderRoutes);
+app.use("/api/bicycles", BicycleRoutes);
+app.use("/api/orders", OrderRoutes);
 
 const getAController =  (req: Request, res: Response) => {
   res.send('i say Hello World!');
