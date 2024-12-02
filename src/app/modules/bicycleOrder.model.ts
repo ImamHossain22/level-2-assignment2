@@ -1,5 +1,5 @@
-import { Bicycles } from './store/bicycleStore.interface';
-import mongoose, { Schema, model } from 'mongoose';
+
+import  { Schema, model } from 'mongoose';
 import { Orders } from './order/bicyleOrder.interface';
 
 const orderSchema = new Schema<Orders>({

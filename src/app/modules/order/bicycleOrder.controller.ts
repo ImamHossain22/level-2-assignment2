@@ -11,15 +11,14 @@ const createOrderData = async (req: Request, res: Response) => {
             message: "create a order successfully",
             data: result
         });
-    } catch (err) {
-        console.log(err);
+    } catch (err : any) {
+        res.status(400).json({
+            success: false,
+            message: err.message || "Error occurred",
+        });
     }
 };
 
-
-// const calculateRevenue = async (req: Request, res: Response) => {
-    
-// }
 
 export const BicycleOrderControllers = {
     createOrderData,

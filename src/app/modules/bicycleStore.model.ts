@@ -10,7 +10,7 @@ const bicycleSchema = new Schema<Bicycles>({
     type: ["Mountain", "Road", "Hybrid", "BMX", "Electric"],
     description: { type: String },
     
-    quantity: { type: String },
+    quantity: { type: Number },
     
     inStock: { type: Boolean }, 
 },
