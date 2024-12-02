@@ -21,8 +21,8 @@ A robust application for managing bicycle inventory, creating orders, and calcul
   - Calculate the total revenue generated from all completed orders.
     - Uses MongoDB aggregation to compute revenue efficiently.
 
-> [!IMPORTANT]
-> **Technology Stack**
+
+#### Technology Stack
 > _Language: TypeScript_
 > _Framework: Express.js_
 > _Database: MongoDB (Mongoose)_
