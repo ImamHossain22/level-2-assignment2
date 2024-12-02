@@ -22,11 +22,11 @@ A robust application for managing bicycle inventory, creating orders, and calcul
     - Uses MongoDB aggregation to compute revenue efficiently.
 
 > [!IMPORTANT]
->**Technology Stack**
-> _Language: TypeScript
-> _Framework: Express.js
-> Database: MongoDB (Mongoose)
-> Runtime Environment: Node.js_
+> **Technology Stack**
+> _Language: TypeScript_
+> _Framework: Express.js_
+> _Database: MongoDB (Mongoose)_
+> _Runtime Environment: Node.js_
 
 
 ## **Contributing**
