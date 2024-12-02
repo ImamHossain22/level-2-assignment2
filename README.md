@@ -1,4 +1,4 @@
-#### 🚲 ** Bicycle Store and Order Management Application**
+### Bicycle Store and Order Management Application 🚲
 
 A robust application for managing bicycle inventory, creating orders, and calculating revenue. This project demonstrates a full-stack implementation using Node.js, Express, TypeScript, and MongoDB for backend operations.
 
@@ -22,7 +22,7 @@ A robust application for managing bicycle inventory, creating orders, and calcul
     - Uses MongoDB aggregation to compute revenue efficiently.
 
 > [!IMPORTANT]
-## **Technology Stack**
+>**Technology Stack**
 > _Language: TypeScript
 > _Framework: Express.js
 > Database: MongoDB (Mongoose)
