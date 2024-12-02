@@ -1,4 +1,4 @@
-#### 🚲 Bicycle Store and Order Management Application
+#### 🚲 ** Bicycle Store and Order Management Application**
 
 A robust application for managing bicycle inventory, creating orders, and calculating revenue. This project demonstrates a full-stack implementation using Node.js, Express, TypeScript, and MongoDB for backend operations.
 
@@ -33,7 +33,6 @@ A robust application for managing bicycle inventory, creating orders, and calcul
 Contributions are welcome! Please fork this repository and submit a pull request for any feature additions or improvements.
 
 > [!WARNING]
-## **License**
 > This project is licensed under HaloZzen license
 
 ## **Contact**
