@@ -5,9 +5,6 @@ const router = express.Router();
 
 router.post('/create-bicycle', BicycleStoreControllers.createBicycleData);
 
-
-
-router.get('/bicycles', BicycleStoreControllers.getAllCycles);
 router.get('/', BicycleStoreControllers.getAllCycles);
 
 router.get('/:productId', BicycleStoreControllers.getSingleCycleData);
