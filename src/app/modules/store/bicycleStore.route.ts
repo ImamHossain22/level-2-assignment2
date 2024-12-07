@@ -5,12 +5,15 @@ const router = express.Router();
 
 router.post('/create-bicycle', BicycleStoreControllers.createBicycleData);
 
+
+
+router.get('/bicycles', BicycleStoreControllers.getAllCycles);
 router.get('/', BicycleStoreControllers.getAllCycles);
 
-router.get('/:_id', BicycleStoreControllers.getSingleCycleData);
+router.get('/:productId', BicycleStoreControllers.getSingleCycleData);
 
-router.put('/:_id', BicycleStoreControllers.updateCycleData);
+router.put('/:productId', BicycleStoreControllers.updateCycleData);
 
-router.delete('/:_id', BicycleStoreControllers.deleteCycleData);
+router.delete('/:productId', BicycleStoreControllers.deleteCycleData);
 
 export const BicycleRoutes = router;

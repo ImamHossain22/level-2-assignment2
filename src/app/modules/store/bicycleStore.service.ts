@@ -9,24 +9,33 @@ const createBicycleDataIntoDB = async (bicycle: Bicycles) => {
     return result;
 };
 
-const getAllCycleDataFromDB = async ()=>{
-    const result = await BicycleModel.find();
+const getAllCycleDataFromDB = async (searchTerm?: string) => {
+    const filter = searchTerm
+    ? {
+          $or: [
+              { name: { $regex: searchTerm, $options: "i" } },
+              { brand: { $regex: searchTerm, $options: "i" } },
+              { type: { $regex: searchTerm, $options: "i" } },
+          ],
+      }
+    : {};
+    const result = await BicycleModel.find(filter);
     return result;
 }
 
-const getSingleCycleDataFromDB = async (_id: string) => {
-    const result = await BicycleModel.findOne({_id});
+const getSingleCycleDataFromDB = async (productId: string) => {
+    const result = await BicycleModel.findOne({productId});
     return result;
 }
 
-const updateADataFromDB = async (_id: string, data: Bicycles) => {
+const updateADataFromDB = async (productId: string, data: Bicycles) => {
     
-    const result = await BicycleModel.findByIdAndUpdate(_id, data,{new: true})
+    const result = await BicycleModel.findByIdAndUpdate(productId, data,{new: true})
     return result;
 }
-const deleteADataFromDB = async (_id: string) => {
+const deleteADataFromDB = async (productId: string) => {
     
-    const result = await BicycleModel.findByIdAndUpdate(_id)
+    const result = await BicycleModel.findByIdAndUpdate(productId)
     return result;
 }
 

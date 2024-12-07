@@ -23,7 +23,8 @@ const createBicycleData = async (req: Request, res: Response) => {
 
 const getAllCycles = async (req: Request, res: Response) => {
     try {
-        const result = await BicycleStoreServices.getAllCycleDataFromDB();
+        const searchTerm = req.query.searchTerm as string;
+        const result = await BicycleStoreServices.getAllCycleDataFromDB(searchTerm);
         res.status(200).json({
             success: true,
             message: "Bicycle store data retrive successfully",
@@ -33,6 +34,10 @@ const getAllCycles = async (req: Request, res: Response) => {
     }
     catch (error) {
         console.log(error);
+        res.status(500).json({
+            success: false,
+            message: "An error occurred while retrieving bicycles",
+        });
     }
 };
 const getSingleCycleData = async (req: Request, res: Response) => {

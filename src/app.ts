@@ -12,7 +12,7 @@ app.use("/api/products/bicycles", BicycleRoutes);
 app.use("/api/products/orders", OrderRoutes);
 
 const getAController =  (req: Request, res: Response) => {
-  res.send('i say Hello World!');
+  res.send('I say Hello World!');
 }
 
 
