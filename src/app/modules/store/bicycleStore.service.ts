@@ -23,19 +23,19 @@ const getAllCycleDataFromDB = async (searchTerm?: string) => {
     return result;
 }
 
-const getSingleCycleDataFromDB = async (productId: string) => {
-    const result = await BicycleModel.findOne({productId});
+const getSingleCycleDataFromDB = async (productID : string) => {
+    const result = await BicycleModel.findOne({productID});
     return result;
 }
 
-const updateADataFromDB = async (productId: string, data: Bicycles) => {
+const updateADataFromDB = async (productID: string, data: Bicycles) => {
     
-    const result = await BicycleModel.findByIdAndUpdate(productId, data,{new: true})
+    const result = await BicycleModel.findOneAndUpdate({ productID }, data,{ new: true })
     return result;
 }
-const deleteADataFromDB = async (productId: string) => {
+const deleteADataFromDB = async (productID: string) => {
     
-    const result = await BicycleModel.findByIdAndUpdate(productId)
+    const result = await BicycleModel.findOneAndDelete({productID})
     return result;
 }
 

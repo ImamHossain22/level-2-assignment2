@@ -8,7 +8,7 @@ const createOrderData = async (req: Request, res: Response) => {
 
         res.status(200).json({
             success: true,
-            message: "create a order successfully",
+            message: "create an order successfully",
             data: result
         });
     } catch (err : any) {

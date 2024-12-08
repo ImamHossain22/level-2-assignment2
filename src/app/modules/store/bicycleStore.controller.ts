@@ -42,9 +42,8 @@ const getAllCycles = async (req: Request, res: Response) => {
 };
 const getSingleCycleData = async (req: Request, res: Response) => {
     try {
-        const idOfData = req.params._id;
-
-        const result = await BicycleStoreServices.getSingleCycleDataFromDB(idOfData);
+        const { productId } = req.params;
+        const result = await BicycleStoreServices.getSingleCycleDataFromDB(productId);
         res.status(200).json({
             success: true,
             message: "A bicycle data retrive successfully",
@@ -61,9 +60,9 @@ const getSingleCycleData = async (req: Request, res: Response) => {
 const updateCycleData = async (req: Request, res: Response) => {
     try {
         
-        const updateId = req.params._id;
+        const{ productId }= req.params;
         const updatedetails = req.body;
-        const result = await BicycleStoreServices.updateADataFromDB(updateId, updatedetails);
+        const result = await BicycleStoreServices.updateADataFromDB(productId, updatedetails);
         res.status(200).json({
             success: true,
             message: " Bicycle Data Update Successfully",
@@ -77,9 +76,9 @@ const updateCycleData = async (req: Request, res: Response) => {
 const deleteCycleData = async (req: Request, res: Response) => {
     try {
         
-        const deleteId = req.params._id;
+        const { productId } = req.params;
         
-       await BicycleStoreServices.deleteADataFromDB(deleteId);
+       await BicycleStoreServices.deleteADataFromDB(productId);
         res.status(200).json({
             success: true,
             message: " Bicycle Data delete Successfully",
